@@ -1,0 +1,116 @@
+{%extends 'all-apps/base.html'%}
+
+{% block content %}
+{{block.super}}
+ <!-- From google for more information please visit this site "https://codepen.io/GeorgePark/pen/VXrwOP" -->
+ <style>
+  
+    .visually-hidden {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+    .profile {
+        padding: 5rem 0;
+    }
+    
+    .profile::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    
+    .profile-image {
+        float: left;
+        width: calc(33.333% - 1rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 3rem;
+    }
+    
+    .profile-image img {
+        border-radius: 50%;
+    }
+    
+    
+    
+        
+    
+    
+    
+    </style>
+    
+    
+    
+        <div class="container">
+            
+      
+          <div class="profile">
+      
+            <div class="profile-image">
+      
+                <img src="{{profile.profile_photo.url}}"  class="img-responsive" alt="Image">
+      
+            </div>
+      
+            <div class="profile-user-settings">
+      
+              <h1 class="profile-user-name">{{user.username}}</h1>
+      
+              <!-- <a href="{% url 'newproject'%}"><button class="btn profile-edit-btn">Edit Profile</button></a> -->
+              <a href="{% url 'newproject'%}"><button class="btn profile-edit-btn">Upload Project</button></a>
+      
+              
+      
+            </div>
+      
+            
+            <div class="profile-bio">
+      
+              <strong class="profile-real-name">{{profile.user.username}}<br></strong> 
+              <strong>Bio:</strong>{{profile.bio}}<br>
+              <strong>Contact:</strong>{{profile.contact}}
+      
+            </div>
+      
+          </div>
+          <!-- End of profile section -->
+      
+        </div>
+        <!-- End of container -->
+
+<div class="container">
+        
+        <div class="row masonry-container">
+            {%for p in project%}
+            <div class="item col-md-4">
+                <div class="well">
+              
+            <div class="thumbnail"style="background-color:white">
+                
+            
+               
+                    <p>{{p.title}}</p>
+              <img src="{{p.project_image.url}}"  class=" img-responsive" alt="">
+             
+              <p>{{p.description}}</p>
+              
+                <a  href="{{p.link}}"><strong>click to view the site</strong></a>
+                     
+                   
+    
+               <!-- </div>
+              </div> -->
+              </div>
+            </div>
+            </div>
+            {% endfor %}
+            </div>
+          
+          </div>
+          
+    
+{% endblock %}

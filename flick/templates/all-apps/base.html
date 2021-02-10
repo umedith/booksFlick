@@ -1,27 +1,31 @@
 {% load bootstrap3 %}
+{% load static%}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-        {% if title %}
-        <title>Books Flick - {{title}}</title>
-        {% else %}
-        <title> Books Flick </title>
-        {% endif %}
+  {% if title %}
+  <title>Project prompt - {{title}}</title>
+  {% else %}
+    <title> Project prompt </title>
+  {% endif %}
+  {% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/basenews.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+{% endblock %}
 
-        {% block styles %}
-        {% bootstrap_css %}
-        {% endblock %}
+</head>
+<body style="overflow-x:hidden">
+  
+    
+  {% include "navbar.html" %}
+  {% block content %} {%endblock%}
 
-    </head>
-    <body>
-        {% block content %}<h1>hiiii</h1> {%endblock%}
-
-        {% block scripts %}
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        {% bootstrap_javascript %}
-       {% endblock %}
-    </body>
-
+  {% block scripts %}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   {% bootstrap_javascript %}
+  {% endblock %}
+</body>
 </html>

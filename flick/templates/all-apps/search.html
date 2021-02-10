@@ -1,4 +1,42 @@
-{%extends 'all-apps/base.html'%}
+{%extends 'all-apps/base.html'%} 
 {% block content %}
-{{block.super}}
+<div class="container"style="font-family: 'Baloo Bhai', cursive">
+
+  <div class="row"style="color:black">
+    {% if titles %}
+      <h2>Found {{ titles|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 titles for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row masonry-container">
+
+  {% if titles %}
+    {% for t in titles %}
+    <div class="item col-md-4">
+        <div class="well">
+    <div class="thumbnail">
+        <div class="card">
+        <div class="card-body" >
+            
+     
+        <p style="color:black"><strong>user's profile</strong>{{t.user.username}}</p>
+        <p>{{t.title}}</p>
+        <img src="{{t.project_image.url}}"  class=" img-responsive">
+
+        
+          
+        </div>
+          </div>
+          </div>
+          </div>
+          </div>
+      
+    {% endfor %}
+  </div>
+  {% endif %}
+  </div>
+
 {% endblock %}

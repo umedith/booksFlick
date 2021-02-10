@@ -1,1 +1,61 @@
-<h1>Books Flick in Need</h1>
+{%extends 'all-apps/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+  
+
+
+    <div style="background-image: url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8Ym9va3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60);background-size:cover;background-repeat:no-repeat;background-position: center;height:500px">
+        <h1 style="text-align: center;color: white;padding-top: 8em;">Life is too short for reading inferior books<br><br>Here we got you with the superior!</h1>
+        <!-- <h1 style="font-family: 'Staatliches', cursive;color:white;padding:10%;text-align: center">****Rate Projects****</h1> -->
+    </div><br><br><br>
+
+  
+        
+        <div class="row masonry-container" style="font-family: cursive;">
+            <h1  style="font-family: initial;text-align: center">Books Flick</h1>
+          
+            {%for p in projects%}
+            <div class="item col-md-4">
+               
+                <div class="well" style="background-color:rgb(27, 27, 27) ">
+              
+            <div class="thumbnail"style="background-color:white">
+                
+            
+               
+                    <p>{{p.title}}</p>
+              <img src="{{p.project_image.url}}"  class=" img-responsive" alt="">
+             
+              <p>{{p.description}}</p>
+              
+                <a  href="{{p.link}}"><strong>click to view the site</strong></a>
+                     
+                <a href="{% url 'rating' id=p.id %}" data-toggle="modal" data-target="#{{p.id}}" >Vote</a>
+                <p><strong>design:</strong>{{p.design}}</p>
+                       <p><strong>usability:</strong>{{p.usability}}</p>
+                       <p><strong>content:</strong>{{p.content}}</p>
+                       <!-- <p>By <span>{{p.user.username}}</span> with <span>{{rating}}</span></p> -->
+    
+               
+              </div>
+            </div>
+            </div>
+            <div class="modal fade" id="{{p.id}}" tabindex="-1" role="dialog"  aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                  
+                    <!--  -->
+            </div>
+          </div>
+          </div>
+            {% endfor %}
+       
+
+            </div>
+          
+          </div>
+          
+    
+{% endblock %}
