@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+
 from django.http  import HttpResponse
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to Books Flick')
+    return render(request, 'index.html')
+
+def search_results(request):
+#   
+       return render(request, 'all-apps/search.html',{"message":message})
