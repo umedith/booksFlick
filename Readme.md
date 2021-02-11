@@ -16,3 +16,9 @@ Books Flick is a book store store where you can find any novel you want to read 
 6. Auser can search any book ot the website.
 
 ## Installation requirements
+
+- Ensure you have python installed in your local machine.
+- Clone the repository from github by running https://github.com/umedith/neighboorhood.giton the terminal.
+Install the python virtual environment in the repo by running python3.6 -m venv virtual.
+Run pip install -r requirements on your terminal after installing the virtual environment to install the applications requirements.
+Run python3.6 manage.py runserver in a virtual environment to view the site.
