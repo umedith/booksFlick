@@ -13,4 +13,6 @@ Books Flick is a book store store where you can find any novel you want to read 
 3. A user will be able to upload a book to the website.
 4. A user can be able to read other books.
 5. A user will be able to viw their profile and all the books they uploaded.
-6. 
+6. Auser can search any book ot the website.
+
+##
