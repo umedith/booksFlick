@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+        <nav class="navbar navbar-default" style="background-color: mintcream;font-family: cursive;"
+                <div class="container-fluid">
+                
+                <!-- BRAND -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI70rBubZfBhd0N7cnMmREpGpJRjZ350MSjA&usqp=CAU" height=50 style="margin-top:-20%"></a>
+                </div>
+                
+                <!-- COLLAPSIBLE NAVBAR -->
+                <div class="collapse navbar-collapse" id="alignment-example">
+                
+                <!-- Links -->
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav"style="color:black">
+                  
+                <li ><a href="{%url 'welcome' %}">Home<span class="sr-only">(current)</span></a></li>
+                <li ><a href="{% url 'newproject'%}">Add Book<span class="sr-only">(current)</span></a></li>
+                <!-- <li> <a href="/accounts/password/change">Change Password</a> -->
+                <li> <a href="{% url 'new-profile'%}">Add profile</a></li>
+                <!-- <li> <a href="{% url 'profile-api'%}">Api profiles</a></li>
+                <li> <a href="{% url 'project-api'%}">Api projects</a></li> -->
+                <li> <a href="{% url 'profile'%}">View your profile</a></li>
+                <li><a href="/logout">Logout</a>
+                </ul>
+                {% else %}
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
+            {% endif %}
+                
+                <!-- Search -->
+                <form class="navbar-form navbar-right" role="search" action="{% url 'search_results' %}">
+                <div class="form-group">
+                <input type="text" class="form-control" name=title >
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                
+                </div>
+                
+                </div>
+                </nav>
+</body>

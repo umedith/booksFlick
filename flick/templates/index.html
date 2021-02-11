@@ -11,30 +11,30 @@
         <!-- <h1 style="font-family: 'Staatliches', cursive;color:white;padding:10%;text-align: center">****Rate Projects****</h1> -->
     </div><br><br><br>
 
-  
-        
+     
         <div class="row masonry-container" style="font-family: cursive;">
-            <h1  style="font-family: initial;text-align: center">Books Flick</h1>
+            <h1  style="font-family: initial;text-align: center"><b>Books Flick</b></h1><br>
           
             {%for p in projects%}
+
+   
             <div class="item col-md-4">
                
-                <div class="well" style="background-color:rgb(27, 27, 27) ">
+                <div class="well well-sm" style="background-color:rgb(27, 27, 27) ">
               
-            <div class="thumbnail"style="background-color:white">
+            <div class="thumbnail"style="background-color:white; text-align:center">
                 
             
                
                     <p>{{p.title}}</p>
-              <img src="{{p.project_image.url}}"  class=" img-responsive" alt="">
+              <img src="{{p.project_image.url}}"  class=" img-responsive" alt="" style="height: 400px; width: 300px;">
              
               <p>{{p.description}}</p>
               
-                <a  href="{{p.link}}"><strong>click to view the site</strong></a>
-                     
+                <a  href="{{p.link}}" ><strong>Read the book </strong></a><br>
+          
                 <a href="{% url 'rating' id=p.id %}" data-toggle="modal" data-target="#{{p.id}}" >Vote</a>
-                <p><strong>design:</strong>{{p.design}}</p>
-                       <p><strong>usability:</strong>{{p.usability}}</p>
+                
                        <p><strong>content:</strong>{{p.content}}</p>
                        <!-- <p>By <span>{{p.user.username}}</span> with <span>{{rating}}</span></p> -->
     
